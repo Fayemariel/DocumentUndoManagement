@@ -37,6 +37,15 @@ public class DocumentManager {
 
     documentContent = action.getEditedText();
 }
+    public String getDocumentContent() {
+    return documentContent;
+}
+    public ActionStack getActionStack() {
+    return actionStack;
+}
+    public boolean canUndo() {
+    return !actionStack.isEmpty();
+}
     
     
     
