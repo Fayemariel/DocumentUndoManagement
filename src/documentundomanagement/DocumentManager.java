@@ -27,6 +27,17 @@ public class DocumentManager {
 
     documentContent = newText;
 }
+    public void undoDocument() {
+    if (actionStack.isEmpty()) {
+        System.out.println("Nothing to undo!");
+        return;
+    }
+
+    EditAction action = (EditAction) actionStack.pop();
+
+    documentContent = action.getEditedText();
+}
+    
     
     
 }
