@@ -28,17 +28,194 @@ public class DocumentGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlSidebar = new javax.swing.JPanel();
+        lblSubtitle = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        pnlEditor = new javax.swing.JPanel();
+        lblEditorTitle = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDocument = new javax.swing.JTextArea();
+        btnSave = new javax.swing.JButton();
+        btnUndo = new javax.swing.JButton();
+        pnlSearch = new javax.swing.JPanel();
+        lblSearchtitle = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
+        pnlHistory = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtHistory = new javax.swing.JTextArea();
+        lblHistory = new javax.swing.JLabel();
+        btnClear = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlSidebar.setPreferredSize(new java.awt.Dimension(1000, 650));
+        pnlSidebar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblSubtitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblSubtitle.setForeground(new java.awt.Color(204, 204, 204));
+        lblSubtitle.setText("DOCUMENT WORKSPACE");
+        pnlSidebar.add(lblSubtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        lblTitle.setBackground(new java.awt.Color(35, 59, 82));
+        lblTitle.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setText("Document Undo Management");
+        lblTitle.setOpaque(true);
+        lblTitle.setPreferredSize(new java.awt.Dimension(1000, 650));
+        pnlSidebar.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 116));
+
+        pnlEditor.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblEditorTitle.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblEditorTitle.setForeground(new java.awt.Color(93, 91, 91));
+        lblEditorTitle.setText("Document Editor");
+
+        txtDocument.setBackground(new java.awt.Color(222, 222, 222));
+        txtDocument.setColumns(20);
+        txtDocument.setRows(5);
+        txtDocument.setText("Start typing your document here...");
+        jScrollPane1.setViewportView(txtDocument);
+
+        btnSave.setBackground(new java.awt.Color(40, 60, 80));
+        btnSave.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
+        btnSave.setText("Save Edit");
+
+        btnUndo.setBackground(new java.awt.Color(195, 195, 195));
+        btnUndo.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnUndo.setText("Undo");
+
+        javax.swing.GroupLayout pnlEditorLayout = new javax.swing.GroupLayout(pnlEditor);
+        pnlEditor.setLayout(pnlEditorLayout);
+        pnlEditorLayout.setHorizontalGroup(
+            pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlEditorLayout.createSequentialGroup()
+                            .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnUndo, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblEditorTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        pnlEditorLayout.setVerticalGroup(
+            pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblEditorTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSave)
+                    .addComponent(btnUndo))
+                .addGap(0, 6, Short.MAX_VALUE))
+        );
+
+        pnlSidebar.add(pnlEditor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 750, 160));
+
+        pnlSearch.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblSearchtitle.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblSearchtitle.setForeground(new java.awt.Color(93, 91, 91));
+        lblSearchtitle.setText("Search Edit History");
+
+        jTextField1.setBackground(new java.awt.Color(222, 222, 222));
+        jTextField1.setText("Enter keyword...");
+
+        btnSearch.setBackground(new java.awt.Color(40, 60, 80));
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearch.setText("Search");
+
+        javax.swing.GroupLayout pnlSearchLayout = new javax.swing.GroupLayout(pnlSearch);
+        pnlSearch.setLayout(pnlSearchLayout);
+        pnlSearchLayout.setHorizontalGroup(
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSearchLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSearchtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlSearchLayout.setVerticalGroup(
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSearchLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblSearchtitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(jTextField1))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        pnlSidebar.add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 730, -1));
+
+        pnlHistory.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtHistory.setColumns(20);
+        txtHistory.setRows(5);
+        jScrollPane2.setViewportView(txtHistory);
+
+        lblHistory.setBackground(new java.awt.Color(222, 222, 222));
+        lblHistory.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblHistory.setText("Action History");
+
+        btnClear.setBackground(new java.awt.Color(40, 60, 80));
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
+        btnClear.setText("Clear");
+
+        javax.swing.GroupLayout pnlHistoryLayout = new javax.swing.GroupLayout(pnlHistory);
+        pnlHistory.setLayout(pnlHistoryLayout);
+        pnlHistoryLayout.setHorizontalGroup(
+            pnlHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHistoryLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(pnlHistoryLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(lblHistory)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlHistoryLayout.setVerticalGroup(
+            pnlHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHistoryLayout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addGroup(pnlHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnClear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHistoryLayout.createSequentialGroup()
+                        .addComponent(lblHistory)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19))
+        );
+
+        pnlSidebar.add(pnlHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 720, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlSidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlSidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -70,5 +247,23 @@ public class DocumentGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnUndo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblEditorTitle;
+    private javax.swing.JLabel lblHistory;
+    private javax.swing.JLabel lblSearchtitle;
+    private javax.swing.JLabel lblSubtitle;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel pnlEditor;
+    private javax.swing.JPanel pnlHistory;
+    private javax.swing.JPanel pnlSearch;
+    private javax.swing.JPanel pnlSidebar;
+    private javax.swing.JTextArea txtDocument;
+    private javax.swing.JTextArea txtHistory;
     // End of variables declaration//GEN-END:variables
 }
