@@ -100,7 +100,7 @@ public class DocumentGUI extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnUndo, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(lblEditorTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         pnlEditorLayout.setVerticalGroup(
             pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +116,7 @@ public class DocumentGUI extends javax.swing.JFrame {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        pnlSidebar.add(pnlEditor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 750, 160));
+        pnlSidebar.add(pnlEditor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 760, 160));
 
         pnlSearch.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -161,12 +161,14 @@ public class DocumentGUI extends javax.swing.JFrame {
 
         pnlHistory.setBackground(new java.awt.Color(255, 255, 255));
 
+        txtHistory.setBackground(new java.awt.Color(222, 222, 222));
         txtHistory.setColumns(20);
         txtHistory.setRows(5);
         jScrollPane2.setViewportView(txtHistory);
 
         lblHistory.setBackground(new java.awt.Color(222, 222, 222));
         lblHistory.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblHistory.setForeground(new java.awt.Color(93, 91, 91));
         lblHistory.setText("Action History");
 
         btnClear.setBackground(new java.awt.Color(40, 60, 80));
@@ -180,7 +182,7 @@ public class DocumentGUI extends javax.swing.JFrame {
             .addGroup(pnlHistoryLayout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(pnlHistoryLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
@@ -191,16 +193,18 @@ public class DocumentGUI extends javax.swing.JFrame {
             pnlHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHistoryLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(lblHistory)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnClear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlHistoryLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHistoryLayout.createSequentialGroup()
-                        .addComponent(lblHistory)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19))
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46))))
         );
 
-        pnlSidebar.add(pnlHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 720, -1));
+        pnlSidebar.add(pnlHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 730, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
