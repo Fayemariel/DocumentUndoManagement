@@ -74,17 +74,19 @@ public class DocumentGUI extends javax.swing.JFrame {
         txtDocument.setBackground(new java.awt.Color(222, 222, 222));
         txtDocument.setColumns(20);
         txtDocument.setRows(5);
-        txtDocument.setText("Start typing your document here...");
+        txtDocument.setText("agegfeg");
         jScrollPane1.setViewportView(txtDocument);
 
         btnSave.setBackground(new java.awt.Color(40, 60, 80));
         btnSave.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save Edit");
+        btnSave.addActionListener(this::btnSaveActionPerformed);
 
         btnUndo.setBackground(new java.awt.Color(195, 195, 195));
         btnUndo.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         btnUndo.setText("Undo");
+        btnUndo.addActionListener(this::btnUndoActionPerformed);
 
         javax.swing.GroupLayout pnlEditorLayout = new javax.swing.GroupLayout(pnlEditor);
         pnlEditor.setLayout(pnlEditorLayout);
@@ -110,13 +112,13 @@ public class DocumentGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(btnUndo))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUndo)
+                    .addComponent(btnSave))
+                .addGap(0, 26, Short.MAX_VALUE))
         );
 
-        pnlSidebar.add(pnlEditor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 760, 160));
+        pnlSidebar.add(pnlEditor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 760, 180));
 
         pnlSearch.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -126,6 +128,7 @@ public class DocumentGUI extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(222, 222, 222));
         jTextField1.setText("Enter keyword...");
+        jTextField1.addActionListener(this::jTextField1ActionPerformed);
 
         btnSearch.setBackground(new java.awt.Color(40, 60, 80));
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,6 +228,18 @@ public class DocumentGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUndoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUndoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -271,3 +286,5 @@ public class DocumentGUI extends javax.swing.JFrame {
     private javax.swing.JTextArea txtHistory;
     // End of variables declaration//GEN-END:variables
 }
+
+
