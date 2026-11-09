@@ -1,18 +1,24 @@
+
 package documentundomanagement;
 
 public class EditAction extends ActionRecord {
 
-    private String editedText;
+    private String previousText;
+    private String newText;
 
-    public EditAction(int actionId, String editedText) {
+    public EditAction(int actionId, String previousText, String newText) {
+
         super(actionId, "EDIT", "Document was edited");
-        this.editedText = editedText;
-        
+
+        this.previousText = previousText;
+        this.newText = newText;
     }
-    
-    public String getEditedText() {
-    return editedText;
+
+    public String getPreviousText() {
+        return previousText;
+    }
+
+    public String getNewText() {
+        return newText;
+    }
 }
-
-    }
-

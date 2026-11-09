@@ -10,14 +10,81 @@ package documentundomanagement;
  */
 public class DocumentGUI extends javax.swing.JFrame {
     
+    private DocumentManager documentManager;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DocumentGUI.class.getName());
 
     /**
      * Creates new form DocumentGUI
      */
     public DocumentGUI() {
-        initComponents();
+    // Initialize the JFrame and its visual components
+    initComponents();
+    
+    // Set the default placeholder for the search field
+jTextField1.setText("Enter keyword here...");
+
+// Detect when the user clicks the search field
+jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+
+    @Override
+    public void focusGained(java.awt.event.FocusEvent evt) {
+
+        // Remove the placeholder when the user clicks the field
+        if (jTextField1.getText().equals("Enter keyword here...")) {
+            jTextField1.setText("");
+        }
     }
+
+    @Override
+    public void focusLost(java.awt.event.FocusEvent evt) {
+
+        // Restore the placeholder if the field is empty
+        if (jTextField1.getText().trim().isEmpty()) {
+            jTextField1.setText("Enter keyword here...");
+        }
+    }
+});
+    
+    // Set the placeholder text when the editor is empty
+txtDocument.setText("Start typing your document here...");
+
+// Detect when the user clicks inside the document editor
+txtDocument.addFocusListener(new java.awt.event.FocusAdapter() {
+
+    @Override
+    public void focusGained(java.awt.event.FocusEvent evt) {
+
+        // Remove the placeholder when the user starts typing
+        if (txtDocument.getText().equals("Start typing your document here...")) {
+            txtDocument.setText("");
+        }
+    }
+
+    @Override
+    public void focusLost(java.awt.event.FocusEvent evt) {
+
+        // Restore the placeholder if the editor is left empty
+        if (txtDocument.getText().trim().isEmpty()) {
+            txtDocument.setText("Start typing your document here...");
+        }
+    }
+});
+
+    // Create the document manager with a stack capacity of 100
+    documentManager = new DocumentManager(100);
+
+    // Run this code whenever the Save Edit button is clicked
+    btnSave.addActionListener(e -> {
+
+        // Save the current document text and record the edit
+        documentManager.editDocument(txtDocument.getText());
+
+        // Display the edit action in the History area
+        txtHistory.append("EDIT - Document was edited\n");
+    });
+}
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -110,13 +177,13 @@ public class DocumentGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(btnUndo))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUndo)
+                    .addComponent(btnSave))
+                .addGap(0, 36, Short.MAX_VALUE))
         );
 
-        pnlSidebar.add(pnlEditor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 760, 160));
+        pnlSidebar.add(pnlEditor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 760, 190));
 
         pnlSearch.setBackground(new java.awt.Color(255, 255, 255));
 

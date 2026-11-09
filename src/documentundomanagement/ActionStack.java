@@ -1,53 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package documentundomanagement;
 
-/**
- *
- * @author gamon
- */
 public class ActionStack {
-    
-    private ActionRecord[] stack;
-    private int top;
-    
+
+    private StackedLinkedList stack;
+
     public ActionStack(int capacity) {
-        stack = new ActionRecord[capacity];
-        top = -1;
+        stack = new StackedLinkedList();
     }
-    
+
     public void push(ActionRecord action) {
-    if (top == stack.length - 1) {
-        System.out.println("Stack is full!");
-        return;
+        stack.push(action);
     }
 
-    top++;
-    stack[top] = action;
-}
     public ActionRecord pop() {
-    if (top == -1) {
-        System.out.println("Stack is empty!");
-        return null;
+        return stack.pop();
     }
 
-    ActionRecord action = stack[top];
-    stack[top] = null;
-    top--;
-
-    return action;
-}
     public ActionRecord peek() {
-    if (top == -1) {
-        return null;
+        return stack.peek();
     }
 
-    return stack[top];
-}
     public boolean isEmpty() {
-    return top == -1;
-}
-    
+        return stack.isEmpty();
+    }
+
+    public void display() {
+        stack.display();
+    }
 }

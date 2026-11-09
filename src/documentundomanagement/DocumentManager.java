@@ -1,57 +1,86 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package documentundomanagement;
 
-/**
- *
- * @author gamon
- */
 public class DocumentManager {
-    
+
     private ActionStack actionStack;
     private String documentContent;
     private int nextActionId;
     private ActionStack redoStack;
-    
+
     public DocumentManager(int stackCapacity) {
+
         actionStack = new ActionStack(stackCapacity);
         redoStack = new ActionStack(stackCapacity);
+
         documentContent = "";
         nextActionId = 1;
     }
-    
+
     public void editDocument(String newText) {
-    EditAction action = new EditAction(nextActionId++, documentContent);
 
-    actionStack.push(action);
+        if (newText == null || newText.trim().isEmpty()) {
+            System.out.println("Document cannot be empty!");
+            return;
+        }
 
-    documentContent = newText;
-}
+        EditAction action = new EditAction(
+            nextActionId++,
+            documentContent,
+            newText
+        );
+
+        actionStack.push(action);
+
+        documentContent = newText;
+
+        // Clear redo history after a new edit
+        while (!redoStack.isEmpty()) {
+            redoStack.pop();
+        }
+    }
+
     public void undoDocument() {
-    if (actionStack.isEmpty()) {
-        System.out.println("Nothing to undo!");
-        return;
-    }
-    
-    EditAction action = (EditAction) actionStack.pop();
 
-    documentContent = action.getEditedText();
-}
-    public void redoDocument() {
-        
+        if (actionStack.isEmpty()) {
+            System.out.println("Nothing to undo!");
+            return;
+        }
+
+        EditAction action = (EditAction) actionStack.pop();
+
+        documentContent = action.getPreviousText();
+
+        redoStack.push(action);
     }
+
+    public void redoDocument() {
+
+        if (redoStack.isEmpty()) {
+            System.out.println("Nothing to redo!");
+            return;
+        }
+
+        EditAction action = (EditAction) redoStack.pop();
+
+        documentContent = action.getNewText();
+
+        actionStack.push(action);
+    }
+
     public String getDocumentContent() {
-    return documentContent;
-}
+        return documentContent;
+    }
+
     public ActionStack getActionStack() {
-    return actionStack;
-}
+        return actionStack;
+    }
+
     public boolean canUndo() {
-    return !actionStack.isEmpty();
-}
-    
-    
-    
+        return !actionStack.isEmpty();
+    }
+
+    public boolean canRedo() {
+        return !redoStack.isEmpty();
+    }
 }
