@@ -13,9 +13,11 @@ public class DocumentManager {
     private ActionStack actionStack;
     private String documentContent;
     private int nextActionId;
+    private ActionStack redoStack;
     
     public DocumentManager(int stackCapacity) {
         actionStack = new ActionStack(stackCapacity);
+        redoStack = new ActionStack(stackCapacity);
         documentContent = "";
         nextActionId = 1;
     }
@@ -32,11 +34,14 @@ public class DocumentManager {
         System.out.println("Nothing to undo!");
         return;
     }
-
+    
     EditAction action = (EditAction) actionStack.pop();
 
     documentContent = action.getEditedText();
 }
+    public void redoDocument() {
+        
+    }
     public String getDocumentContent() {
     return documentContent;
 }
