@@ -1,4 +1,3 @@
-
 package documentundomanagement;
 
 public class DocumentGUI extends javax.swing.JFrame {
@@ -10,6 +9,7 @@ public class DocumentGUI extends javax.swing.JFrame {
 
     public DocumentGUI() {
         initComponents();
+        setLocationRelativeTo(null);
 
         // Initialize the document manager
         documentManager = new DocumentManager(100);
@@ -81,6 +81,8 @@ public class DocumentGUI extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         pnlSidebar = new javax.swing.JPanel();
@@ -107,25 +109,22 @@ public class DocumentGUI extends javax.swing.JFrame {
         pnlSidebar.setPreferredSize(new java.awt.Dimension(1000, 650));
         pnlSidebar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblSubtitle.setFont(new java.awt.Font("Segoe UI", 1, 14));
+        lblSubtitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblSubtitle.setForeground(new java.awt.Color(204, 204, 204));
         lblSubtitle.setText("DOCUMENT WORKSPACE");
-        pnlSidebar.add(lblSubtitle,
-                new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        pnlSidebar.add(lblSubtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         lblTitle.setBackground(new java.awt.Color(35, 59, 82));
-        lblTitle.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24));
+        lblTitle.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setText("Document Undo Management");
         lblTitle.setOpaque(true);
         lblTitle.setPreferredSize(new java.awt.Dimension(1000, 650));
-        pnlSidebar.add(lblTitle,
-                new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 116));
+        pnlSidebar.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 116));
 
-        // EDITOR PANEL
         pnlEditor.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblEditorTitle.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        lblEditorTitle.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblEditorTitle.setForeground(new java.awt.Color(93, 91, 91));
         lblEditorTitle.setText("Document Editor");
 
@@ -135,146 +134,98 @@ public class DocumentGUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtDocument);
 
         btnSave.setBackground(new java.awt.Color(40, 60, 80));
-        btnSave.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14));
+        btnSave.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save Edit");
         btnSave.addActionListener(this::btnSaveActionPerformed);
 
         btnUndo.setBackground(new java.awt.Color(195, 195, 195));
-        btnUndo.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14));
+        btnUndo.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         btnUndo.setText("Undo");
         btnUndo.addActionListener(this::btnUndoActionPerformed);
 
-        javax.swing.GroupLayout pnlEditorLayout =
-                new javax.swing.GroupLayout(pnlEditor);
-
+        javax.swing.GroupLayout pnlEditorLayout = new javax.swing.GroupLayout(pnlEditor);
         pnlEditor.setLayout(pnlEditorLayout);
-
         pnlEditorLayout.setHorizontalGroup(
-            pnlEditorLayout.createParallelGroup(
-                    javax.swing.GroupLayout.Alignment.LEADING)
+            pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEditorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlEditorLayout.createParallelGroup(
-                        javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1,
-                            javax.swing.GroupLayout.PREFERRED_SIZE, 706,
-                            javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlEditorLayout.createParallelGroup(
-                            javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(pnlEditorLayout.createSequentialGroup()
-                            .addComponent(btnSave,
-                                    javax.swing.GroupLayout.PREFERRED_SIZE, 337,
-                                    javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(
-                                    javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnUndo,
-                                    javax.swing.GroupLayout.PREFERRED_SIZE, 363,
-                                    javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(lblEditorTitle,
-                                javax.swing.GroupLayout.PREFERRED_SIZE, 120,
-                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnUndo, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblEditorTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
-
         pnlEditorLayout.setVerticalGroup(
-            pnlEditorLayout.createParallelGroup(
-                    javax.swing.GroupLayout.Alignment.LEADING)
+            pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEditorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblEditorTitle)
-                .addPreferredGap(
-                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1,
-                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(
-                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlEditorLayout.createParallelGroup(
-                        javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUndo)
                     .addComponent(btnSave))
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(0, 36, Short.MAX_VALUE))
         );
 
-        // Add the editor panel ONCE
-        pnlSidebar.add(pnlEditor,
-                new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 760, 180));
+        pnlSidebar.add(pnlEditor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 760, 190));
 
-        // SEARCH PANEL
         pnlSearch.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblSearchtitle.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        lblSearchtitle.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblSearchtitle.setForeground(new java.awt.Color(93, 91, 91));
         lblSearchtitle.setText("Search Edit History");
 
         jTextField1.setBackground(new java.awt.Color(222, 222, 222));
-        jTextField1.setText("Enter keyword...");
         jTextField1.addActionListener(this::jTextField1ActionPerformed);
 
         btnSearch.setBackground(new java.awt.Color(40, 60, 80));
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
 
-        javax.swing.GroupLayout pnlSearchLayout =
-                new javax.swing.GroupLayout(pnlSearch);
-
+        javax.swing.GroupLayout pnlSearchLayout = new javax.swing.GroupLayout(pnlSearch);
         pnlSearch.setLayout(pnlSearchLayout);
-
         pnlSearchLayout.setHorizontalGroup(
-            pnlSearchLayout.createParallelGroup(
-                    javax.swing.GroupLayout.Alignment.LEADING)
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSearchLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(pnlSearchLayout.createParallelGroup(
-                        javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSearchtitle,
-                            javax.swing.GroupLayout.PREFERRED_SIZE, 123,
-                            javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSearchtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlSearchLayout.createSequentialGroup()
-                        .addComponent(jTextField1,
-                                javax.swing.GroupLayout.PREFERRED_SIZE, 596,
-                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(
-                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch,
-                                javax.swing.GroupLayout.PREFERRED_SIZE, 108,
-                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(
-                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
         pnlSearchLayout.setVerticalGroup(
-            pnlSearchLayout.createParallelGroup(
-                    javax.swing.GroupLayout.Alignment.LEADING)
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSearchLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblSearchtitle)
-                .addPreferredGap(
-                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlSearchLayout.createParallelGroup(
-                        javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSearch,
-                            javax.swing.GroupLayout.DEFAULT_SIZE, 34,
-                            Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                     .addComponent(jTextField1))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        pnlSidebar.add(pnlSearch,
-                new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 730, -1));
+        pnlSidebar.add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 730, -1));
 
-        // HISTORY PANEL
         pnlHistory.setBackground(new java.awt.Color(255, 255, 255));
 
         txtHistory.setBackground(new java.awt.Color(222, 222, 222));
         txtHistory.setColumns(20);
         txtHistory.setRows(5);
-        txtHistory.setEditable(false);
         jScrollPane2.setViewportView(txtHistory);
 
-        lblHistory.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        lblHistory.setBackground(new java.awt.Color(222, 222, 222));
+        lblHistory.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblHistory.setForeground(new java.awt.Color(93, 91, 91));
         lblHistory.setText("Action History");
 
@@ -282,127 +233,120 @@ public class DocumentGUI extends javax.swing.JFrame {
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
 
-        javax.swing.GroupLayout pnlHistoryLayout =
-                new javax.swing.GroupLayout(pnlHistory);
-
+        javax.swing.GroupLayout pnlHistoryLayout = new javax.swing.GroupLayout(pnlHistory);
         pnlHistory.setLayout(pnlHistoryLayout);
-
         pnlHistoryLayout.setHorizontalGroup(
-            pnlHistoryLayout.createParallelGroup(
-                    javax.swing.GroupLayout.Alignment.LEADING)
+            pnlHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHistoryLayout.createSequentialGroup()
-                .addComponent(jScrollPane2,
-                        javax.swing.GroupLayout.PREFERRED_SIZE, 601,
-                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(
-                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnClear,
-                        javax.swing.GroupLayout.DEFAULT_SIZE, 117,
-                        Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(pnlHistoryLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(lblHistory)
-                .addContainerGap(
-                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
         pnlHistoryLayout.setVerticalGroup(
-            pnlHistoryLayout.createParallelGroup(
-                    javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                    pnlHistoryLayout.createSequentialGroup()
+            pnlHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHistoryLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(lblHistory)
-                .addPreferredGap(
-                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlHistoryLayout.createParallelGroup(
-                        javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlHistoryLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2,
-                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                            pnlHistoryLayout.createSequentialGroup()
-                        .addComponent(btnClear,
-                                javax.swing.GroupLayout.PREFERRED_SIZE, 40,
-                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHistoryLayout.createSequentialGroup()
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46))))
         );
 
-        pnlSidebar.add(pnlHistory,
-                new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 730, -1));
+        pnlSidebar.add(pnlHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 730, -1));
 
-        // MAIN FRAME LAYOUT
-        javax.swing.GroupLayout layout =
-                new javax.swing.GroupLayout(getContentPane());
-
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
-
         layout.setHorizontalGroup(
-            layout.createParallelGroup(
-                    javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(
-                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlSidebar,
-                        javax.swing.GroupLayout.PREFERRED_SIZE, 729,
-                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlSidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
         layout.setVerticalGroup(
-            layout.createParallelGroup(
-                    javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlSidebar,
-                        javax.swing.GroupLayout.PREFERRED_SIZE, 599,
-                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(
-                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlSidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
+     private void jTextField1ActionPerformed(
+            java.awt.event.ActionEvent evt) {
         searchHistory();
     }
 
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {
+    // SAVE EDIT BUTTON
+    private void btnSaveActionPerformed(
+            java.awt.event.ActionEvent evt) {
 
         String text = txtDocument.getText();
 
         if (text.trim().isEmpty()
                 || text.equals("Start typing your document here...")) {
+
             javax.swing.JOptionPane.showMessageDialog(
-                    this, "Please enter some document text.");
+                    this,
+                    "Please enter some document text."
+            );
+
             return;
         }
 
         documentManager.editDocument(text);
+
         txtHistory.setText(documentManager.getHistory());
 
         javax.swing.JOptionPane.showMessageDialog(
-                this, "Your edit has been saved.");
+                this,
+                "Your edit has been saved successfully."
+        );
     }
 
-    private void btnUndoActionPerformed(java.awt.event.ActionEvent evt) {
+    // UNDO BUTTON
+    private void btnUndoActionPerformed(
+            java.awt.event.ActionEvent evt) {
 
         String previousText = documentManager.undo();
 
         if (previousText == null) {
+
             javax.swing.JOptionPane.showMessageDialog(
-                    this, "There is nothing to undo.");
+                    this,
+                    "There is nothing to undo."
+            );
+
         } else {
-            txtDocument.setText(previousText);
+
+            if (previousText.isEmpty()) {
+                txtDocument.setText(
+                        "Start typing your document here...");
+            } else {
+                txtDocument.setText(previousText);
+            }
+
             txtHistory.setText(documentManager.getHistory());
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Previous document version restored."
+            );
         }
     }
 
+    // MAIN METHOD
     public static void main(String args[]) {
 
         try {
@@ -410,12 +354,17 @@ public class DocumentGUI extends javax.swing.JFrame {
                     : javax.swing.UIManager.getInstalledLookAndFeels()) {
 
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+
+                    javax.swing.UIManager.setLookAndFeel(
+                            info.getClassName());
+
                     break;
                 }
             }
+
         } catch (ReflectiveOperationException
                 | javax.swing.UnsupportedLookAndFeelException ex) {
+
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
 
@@ -423,7 +372,7 @@ public class DocumentGUI extends javax.swing.JFrame {
                 new DocumentGUI().setVisible(true));
     }
 
-    // Variables declaration
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnSearch;
@@ -442,5 +391,5 @@ public class DocumentGUI extends javax.swing.JFrame {
     private javax.swing.JPanel pnlSidebar;
     private javax.swing.JTextArea txtDocument;
     private javax.swing.JTextArea txtHistory;
-    // End of variables declaration
+    // End of variables declaration//GEN-END:variables
 }

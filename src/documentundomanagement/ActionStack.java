@@ -1,4 +1,3 @@
-
 package documentundomanagement;
 
 public class ActionStack {
