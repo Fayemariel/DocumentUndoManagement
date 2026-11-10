@@ -98,11 +98,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="0" y="140" width="760" height="190"/>
-=======
-              <AbsoluteConstraints x="0" y="140" width="760" height="180"/>
->>>>>>> origin/main
             </Constraint>
           </Constraints>
 
@@ -138,11 +134,7 @@
                           <Component id="btnUndo" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSave" min="-2" max="-2" attributes="0"/>
                       </Group>
-<<<<<<< HEAD
                       <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
-=======
-                      <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
->>>>>>> origin/main
                   </Group>
               </Group>
             </DimensionLayout>
